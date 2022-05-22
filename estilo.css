@@ -1,0 +1,897 @@
+*{
+	box-sizing: border-box;
+	font-family: monospace;
+	user-select: none;
+}
+body{
+	padding: 0;
+	margin: 0;
+	background: #000;
+}
+:root{
+	--color-sector: #fff;
+	--color-container: #555;
+	--color-referencias: #fff;
+	--color-orizio: #2d315c;
+	--color-mayer: #c64370;
+	--color-vanguard: #ffa600;
+	--borde-sector: 1px solid black;
+}
+
+.container{
+	position: relative;
+	display: flex;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background: var(--color-container);
+	padding: 37.5px 37.5px 0 0;
+	width: fit-content;
+	height: 100%;	
+	border: 3px solid black;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+
+
+
+
+
+/*-------DIVISIÓN DE MÓDULOS Y CONFIGURACIÓN DE SECTORES------*/
+
+.sector{
+	background: var(--color-sector);
+	border: var(--borde-sector);
+	border-radius: 5PX;
+	box-shadow: 0 0 10px black;
+}
+
+.modulo-oeste{
+	display: inline-grid;
+	position: relative;
+	grid-gap: 37.5px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 7.5% 1fr 24.17%;
+	grid-auto-flow: column;
+	width: 180px;	
+	height: 900px;
+/*	background: #cfc;*/
+}
+
+	.modulo-oeste .sector:first-child {
+		grid-row: 1/span 2;	
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+.modulo-centroeste{
+	display: inline-grid;
+	position: relative;
+	grid-auto-flow: column;
+	grid-gap: 37.5px;
+	grid-template-columns: 40% 60%;
+	grid-template-rows: 6.5% repeat(3, 1fr) 38%;
+	width: 800px;	
+	height: 937.5px;
+	margin-top: -37.5px;
+	margin-left: 37.5px;
+}
+
+.referencias{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background: var(--color-referencias);
+	width: 760px;
+	height: 285px;
+	border: var(--borde-sector);
+}
+
+
+
+
+
+
+
+
+/*------------SUBDIVISIÓN Y ETIQUETADO DE SECTORES-------------*/
+
+/* SECTOR 1 */
+
+	.sector-1__superior::before{
+		content: "HILO COLOR";
+		position: absolute;
+		text-align: center;
+		font-size: 12px;
+		display: inline-block;
+		background: var(--color-sector);
+		width: 100%;
+		height: max-content;
+		margin: 0;
+		top: -15px;
+		left: 0;
+		outline: var(--borde-sector);
+	}
+	.sector-1__superior{
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		width: 100%;
+		height: 50%;
+	}
+	.sector-1__p{
+		text-align: center;
+		border-top: var(--borde-sector);
+		border-bottom: var(--borde-sector);
+		margin: 0;
+		padding: 5px;
+	}
+	.sector-1__inferior{
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		width: 100%;
+		height: 50%;
+	}
+	.sector-1__inferior::after{
+		content: "HILADO";
+		position: absolute;
+		text-align: center;
+		font-size: 12px;
+		display: inline-block;
+		background: var(--color-sector);
+		width: 100%;
+		height: max-content;
+		margin: 0;
+		left: 0;
+		bottom: -15px;
+		outline: var(--borde-sector);
+	}
+
+/* SECTOR 5 */
+
+	.sector-5{
+		position: relative;
+	}
+
+	.sector-5__inferior {
+		position: absolute;
+		display: inline-block;
+		background: var(--color-sector);
+		border: var(--borde-sector);
+		width: 180%;
+		height: 37.86%;
+		bottom: -1px;
+		left: -40%;
+	}
+
+	.sector-5::after {
+		content: "";
+		position: absolute;
+		display: inline-block;
+		background: var(--color-sector);
+		width: 100%;
+		height: 10px;
+		top: 59%;
+		left: 0;
+		margin: auto;
+		z-index: 5;
+	}
+	.sector-5::before{
+		content: "hilado local";
+		position: absolute;
+		text-align: center;
+		font-size: 10px;
+		display: inline-block;
+		background: var(--color-sector);
+		width: 100%;
+		height: max-content;
+		margin: 0;
+		top: -13px;
+		left: 0;
+		outline: var(--borde-sector);
+	}
+
+
+/* SECTOR 11 */
+
+	.sector-11{
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		overflow: hidden;
+	}
+	.sector-11 p{
+		display: flex;
+		position: relative;
+		height: 100%;
+		width: 70px;
+		text-align: center;
+		margin: 0;
+		padding: 5px;
+		align-items: center;
+		outline: var(--borde-sector);
+		user-select: none;
+	}
+
+/* SECTOR 12 */
+
+	.sector-12{
+		position: relative;
+	}
+	.sector-12 p{
+		display: inline-flex;
+		width: 70px;
+		height: 100%;
+		text-align: center;
+		margin: 0;
+		padding: 5px;
+		align-items: center;
+		border-right: var(--borde-sector);
+	}
+
+/* SECTOR 13 */
+
+	.sector-13{
+		position: relative;
+		display: flex;
+	}
+	.sector-13__etiquetas{
+		display: inline-flex;
+		flex-direction: column;
+		width: 70px;
+		height: 100%;
+		justify-content: space-between;
+		text-align: center;
+		margin: 0;
+		align-items: center;
+	}
+	.sector-13__etiquetas p{
+		margin: 0;
+		padding: 3px 7px;
+		border-right: var(--borde-sector);
+		border-bottom: var(--borde-sector);
+	}
+	.sector-13__etiquetas p:last-child{
+		border-bottom: none;
+		border-top: var(--borde-sector);
+	}
+
+
+/* REFERENCIAS */
+
+	.oficinas{
+		display: inline-flex;
+		outline: var(--borde-sector);
+		width: 200px;
+		flex-wrap: wrap;
+	}
+	.oficinas div{
+		display: flex;
+		height: 70px;
+		flex-grow: 1;
+		align-items: center;
+		justify-content: center;
+	}
+	.oficinas div:first-child{
+		width: 100%;
+		border-bottom: var(--borde-sector);
+	}
+	.oficinas div:nth-child(2){
+		width: 100%;
+		border-bottom: var(--borde-sector);
+	}
+	.oficinas div:nth-child(3){
+		border-right: var(--borde-sector);
+		flex-basis: max-content;
+	}
+	.oficinas div p{
+		width: min-content;
+		text-align: center;
+	}
+
+
+	.tipos-maquinas{
+		display: inline-flex;
+		position: absolute;
+		left: 300px;
+	}
+	.tipos-maquinas div{
+		border: var(--borde-sector);
+		width: 75px;
+		height: 75px;
+		border-radius: 50%;
+		margin: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.orizio{
+		background: var(--color-orizio);
+		color: white;
+	}
+	.mayer{
+		background: var(--color-mayer);
+	}
+	.vanguard{
+		background: var(--color-vanguard);
+	}
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------- MÁQUINAS --------------------------*/
+.maquina{
+	position: relative;
+}
+
+.motor{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid black;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	position: relative;
+	z-index: 5;
+}
+.tablero{
+	width: 15px;
+	height: 10px;
+	border: 1px solid black;
+	position: absolute;
+	top: 15px;
+}
+
+
+/* SECTOR 1 */
+	.sector-1__superior, .sector-1__inferior{
+
+		padding-right: 5px;
+		align-items: flex-end;
+		justify-content: space-around;
+	}
+	.separador{
+		display: inline-block;
+		position: absolute;
+		background: orange;
+		border: 1px solid black;
+		border-radius: 2px;
+		width: 50px;
+		height: 5px;
+	}
+	.sector-1__superior .separador{
+		top: 8px;
+		left: 10px;
+		box-shadow: 0 -6px 0 -1px orange, 0 -6px 0 0 black, 0 54px 0 -1px orange, 0 54px 0 0 black, 0 60px 0 -1px orange, 0 60px 0 0 black, 0 69px 0 -1px orange, 0 69px 0 0 black, 0 75px 0 -1px orange, 0 75px 0 0 black, 0 129px 0 -1px orange, 0 129px 0 0 black, 0 135px 0 -1px orange, 0 135px 0 0 black, 0 149px 0 -1px orange, 0 149px 0 0 black, 0 205px 0 -1px orange, 0 205px 0 0 black, 0 224px 0 -1px orange, 0 224px 0 0 black, 0 280px 0 -1px orange, 0 280px 0 0 black;
+	}
+
+	.sector-1 .tablero{
+		left: -10px;
+	}
+	.sector-1__inferior .separador{
+		top: 7px;
+		left: 10px;
+		box-shadow: 0 56px 0 -1px orange, 0 56px 0 0 black, 0 75px 0 -1px orange, 0 75px 0 0 black, 0 131px 0 -1px orange, 0 131px 0 0 black, 0 150px 0 -1px orange, 0 150px 0 0 black, 0 205px 0 -1px orange, 0 205px 0 0 black, 0 225px 0 -1px orange, 0 225px 0 0 black, 0 280px 0 -1px orange, 0 280px 0 0 black;
+	}
+
+
+/* SECTOR 2 */
+
+	.sector-2{
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		padding-right: 5px;
+		align-items: flex-end;
+		justify-content: space-around;
+	}
+	.sector-2 .tablero{
+		left: -10px;
+	}
+	.sector-2 .separador{
+		top: 6px;
+		left: 10px;
+		box-shadow: 0 55px 0 -1px orange, 0 55px 0 0 black, 0 71px 0 -1px orange, 0 71px 0 0 black, 0 127px 0 -1px orange, 0 127px 0 0 black, 0 143px 0 -1px orange, 0 143px 0 0 black, 0 199px 0 -1px orange, 0 199px 0 0 black;
+	}
+
+/* SECTOR 3 */
+
+	.sector-3{
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		padding-left: 5px;
+		align-items: flex-start;
+		justify-content: space-around;
+	}
+
+	.sector-3 .tablero{
+		right: -10px;
+	}
+	.sector-3 .separador{
+		top: 3px;
+		left: 10px;
+		box-shadow: 0 55px 0 -1px orange, 0 55px 0 0 black;
+	}
+
+/* SECTOR 4 */
+
+	.sector-4{
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		padding-left: 5px;
+		align-items: flex-start;
+		justify-content: space-around;
+	}
+
+	.sector-4 .tablero{
+		right: -10px;
+	}
+	.sector-4 .separador{
+		top: 8px;
+		left: 10px;
+		box-shadow: 0 54px 0 -1px orange, 0 54px 0 0 black, 0 76px 0 -1px orange, 0 76px 0 0 black, 0 132px 0 -1px orange, 0 132px 0 0 black, 0 153px 0 -1px orange, 0 153px 0 0 black, 0 209px 0 -1px orange, 0 209px 0 0 black, 0 230px 0 -1px orange, 0 230px 0 0 black, 0 286px 0 -1px orange, 0 286px 0 0 black, 0 307px 0 -1px orange, 0 307px 0 0 black, 0 363px 0 -1px orange, 0 363px 0 0 black, 0 384px 0 -1px orange, 0 384px 0 0 black, 0 440px 0 -1px orange, 0 440px 0 0 black, 0 460px 0 -1px orange, 0 460px 0 0 black, 0 516px 0 -1px orange, 0 516px 0 0 black;
+	}
+
+/* SECTOR 5 */
+
+	.sector-5{
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		padding-left: 5px;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+	.sector-5 .maquina{
+		margin: 13px 0 13px;
+		z-index: 10;
+	}
+	.sector-5 .tablero{
+		z-index: 3;
+		right: -10px;
+	}
+	.sector-5 .separador{
+		z-index: 10;
+		top: 5px;
+		left: 10px;
+		box-shadow: 0 55px 0 -1px orange, 0 55px 0 0 black, 0 72px 0 -1px orange, 0 72px 0 0 black, 0 126px 0 -1px orange, 0 126px 0 0 black;
+	}
+
+	.sector-5__inferior{
+		display: flex;
+		flex-direction: row;
+		position: absolute;
+		padding: 0 3px;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.sector-5__inferior .maquina{
+		margin: 13px 0 13px;
+		z-index: 10;
+	}
+	.sector-5__inferior .tablero{
+		z-index: 3;
+		right: -10px;
+	}
+	#tablero122{
+		left: -10px;
+	}
+	.sector-5__inferior .separador{
+		z-index: 10;
+		top: 10px;
+		left: 5px;
+		box-shadow: 0 55px 0 -1px orange, 0 55px 0 0 black, 65px 0px 0 -1px orange, 65px 0px 0 0 black, 65px 55px 0 -1px orange, 65px 55px 0 0 black;
+	}
+
+/* SECTOR 6 y 11*/
+
+	.sector-6, .sector-11 .maquinas{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		position: relative;
+		padding-bottom: 2px;
+		align-items: flex-end;
+		justify-content: space-around;
+	}
+
+	.sector-6 .tablero, .sector-11 .maquinas .tablero{
+		transform: rotate(90deg);
+		top: -7px;
+		left: 15px;
+	}
+	.sector-6 .separador, .sector-11 .maquinas .separador{
+		transform: rotate(-90deg);
+		top: 28px;
+		left: -12px;
+		box-shadow: 0 54px 0 -1px orange, 0 54px 0 0 black, 0 79px 0 -1px orange, 0 79px 0 0 black, 0 134px 0 -1px orange, 0 134px 0 0 black, 0 158px 0 -1px orange, 0 158px 0 0 black, 0 213px 0 -1px orange, 0 213px 0 0 black, 0 238px 0 -1px orange, 0 238px 0 0 black, 0 293px 0 -1px orange, 0 293px 0 0 black;
+	}
+/* SECTOR 7, 8, 9, 14 (y tablero del 12 y 13) */
+
+	.sector-7, .sector-8, .sector-9, .sector-14{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 1px 0;
+	}
+
+	.sector-7 .sup, .sector-7 .inf, .sector-8 .sup, .sector-8 .inf, .sector-9 .sup, .sector-9 .inf, .sector-14 .sup, .sector-14 .inf, .sector-15{
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	.sector-7 .sup .tablero, .sector-8 .sup .tablero, .sector-9 .sup .tablero, .sector-12 .maquinas .sup .tablero, .sector-13 .maquinas .sup .tablero, .sector-14 .sup .tablero{
+		transform: rotate(-90deg);
+		top: 40px;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	.sector-7 .inf .tablero, .sector-8 .inf .tablero, .sector-9 .inf .tablero, .sector-12 .maquinas .inf .tablero, .sector-13 .maquinas .inf .tablero{
+		transform: rotate(-90deg);
+		top: -6px;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	.sector-7 .sup .separador, .sector-8 .sup .separador, .sector-9 .sup .separador{
+		transform: rotate(-90deg);
+		top: 23px;
+		left: -12px;
+		box-shadow: 0 54px 0 -1px orange, 0 54px 0 0 black, 0 79px 0 -1px orange, 0 79px 0 0 black, 0 134px 0 -1px orange, 0 134px 0 0 black, 0 158px 0 -1px orange, 0 158px 0 0 black, 0 213px 0 -1px orange, 0 213px 0 0 black, 0 238px 0 -1px orange, 0 238px 0 0 black, 0 293px 0 -1px orange, 0 293px 0 0 black;
+	}
+	.sector-7 .inf .separador, .sector-8 .inf .separador{
+		transform: rotate(-90deg);
+		top: 17px;
+		left: -12px;
+		box-shadow: 0 54px 0 -1px orange, 0 54px 0 0 black, 0 79px 0 -1px orange, 0 79px 0 0 black, 0 134px 0 -1px orange, 0 134px 0 0 black, 0 158px 0 -1px orange, 0 158px 0 0 black, 0 213px 0 -1px orange, 0 213px 0 0 black, 0 238px 0 -1px orange, 0 238px 0 0 black, 0 293px 0 -1px orange, 0 293px 0 0 black;
+	}
+
+/* SECTOR 9 - INFERIOR */
+
+	.sector-9 .inf{
+		justify-content: space-between;
+		padding-left: 18px;
+		padding-right: 3px;
+		align-items: flex-end;
+	}
+
+	.sector-9 .inf .separador, .sector-10 .sup .separador{
+		transform: rotate(-90deg);
+		top: 27px;
+		left: -12px;
+		box-shadow: 0 54px 0 -1px orange, 0 54px 0 0 black, 0 81px 0 -1px orange, 0 81px 0 0 black, 0 136px 0 -1px orange, 0 136px 0 0 black, 0 161px 0 -1px orange, 0 161px 0 0 black, 0 216px 0 -1px orange, 0 216px 0 0 black, 0 230px 0 -1px orange, 0 230px 0 0 black;
+	}
+
+	.maquina-vanguard{
+		position: relative;
+	}
+	.maquina-vanguard .motor{
+		width: 55px;
+		height: 55px;
+	}
+	.sector-9 .maquina-vanguard .tablero{
+		transform: rotate(30deg);
+		top: 6px;
+		left: -9px;
+		right: unset;
+	}
+	.separador-vanguard{
+		display: inline-block;
+		position: absolute;
+		background: orange;
+		border: 1px solid black;
+		border-radius: 3px;
+		width: 65px;
+		height: 10px;
+	}
+	.sector-9 .inf .separador-vanguard{
+		top: -11px;
+		right: 5px;
+	}
+
+
+/* SECTOR 10 */
+	
+	.sector-10{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding: 1px 0;
+	}
+	.sector-10 .sup{
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding-left: 23px;
+		padding-right: 3px;
+		align-items: flex-start;
+	}
+	.sector-10 .sup .tablero{
+		transform: rotate(-90deg);
+		top: 42px;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	.sector-10 .maquina-vanguard .tablero{
+		transform: rotate(-30deg);
+		bottom: 6px;
+		left: -7px;
+		right: unset;
+	}
+	.sector-10 .sup .separador-vanguard{
+		bottom: -10px;
+		right: 5px;
+	}
+	
+	#maquina-24 .motor{
+		width: 35px;
+		height: 35px;
+	}
+	#maquina-24 .tablero{
+		top: 33px;
+	}
+	#maquina-108{
+		margin-left: 5px;
+	}
+	.sector-10 .sup .separador{
+		top: 24px;
+	}
+
+
+	.sector-10 .inf{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: flex-start;
+		padding-left: 8px;
+		height: 100%;
+		width: fit-content;
+	}
+	.sector-10 .inf .tablero{
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		right: -10px;
+	}
+	#maquina-26{
+		padding-left: 10px;
+	}
+	#maquina-26 .motor{
+		width: 35px;
+		height: 35px;
+	}
+	#maquina-26 .tablero{
+		transform: rotate(90deg);
+		top: -40px;
+		left: 0;
+	}
+	#maquina-26 .separador{
+		transform: rotate(-90deg);
+		top: 13px;
+		left: -25px;
+		box-shadow: 0 55px 0 -1px orange, 0 55px 0 0 black;
+	}
+	#maquina-133{
+		top: -5px;
+	}
+	.sector-10 .inf .separador{
+		top: 52px;
+		left: 10px;
+		box-shadow: 0 55px 0 -1px orange, 0 55px 0 0 black, 0 62px 0 -1px orange, 0 62px 0 0 black, 0 116px 0 -1px orange, 0 116px 0 0 black, 0 123px 0 -1px orange, 0 123px 0 0 black, 0 178px 0 -1px orange, 0 178px 0 0 black, 0 185px 0 -1px orange, 0 185px 0 0 black, 0 239px 0 -1px orange, 0 239px 0 0 black;
+	}
+
+/* SECTOR 11 */
+	
+	.sector-11 .maquinas .separador, .sector-12 .maquinas .sup .separador, .sector-13 .maquinas .sup .separador{
+		box-shadow: 0 55px 0 -1px orange, 0 55px 0 0 black, 0 82px 0 -1px orange, 0 82px 0 0 black, 0 137px 0 -1px orange, 0 137px 0 0 black, 0 164px 0 -1px orange, 0 164px 0 0 black, 0 219px 0 -1px orange, 0 219px 0 0 black, 0 245px 0 -1px orange, 0 245px 0 0 black, 0 302px 0 -1px orange, 0 302px 0 0 black, 0 326px 0 -1px orange, 0 326px 0 0 black, 0 383px 0 -1px orange, 0 383px 0 0 black;
+	}
+
+/* SECTOR 12 */
+
+	.sector-12{
+		display: flex;
+	}
+	.sector-12 .maquinas, .sector-13 .maquinas{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex-grow: 1;
+		padding: 1px 0;
+	}
+	.sector-12 .maquinas .sup, .sector-12 .maquinas .inf, .sector-13 .maquinas .sup, .sector-13 .maquinas .inf{
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+	.sector-12 .maquinas .sup .separador, .sector-13 .maquinas .sup .separador{
+		transform: rotate(-90deg);
+		top: 23px;
+		left: -12px;
+	}
+	.sector-12 .maquinas .inf .separador{
+		transform: rotate(-90deg);
+		top: 16px;
+		left: -2px;
+		box-shadow: 0 55px 0 -1px orange, 0 55px 0 0 black, 0 100px 0 -1px orange, 0 100px 0 0 black, 0 159px 0 -1px orange, 0 159px 0 0 black, 0 201px 0 -1px orange, 0 201px 0 0 black, 0 262px 0 -1px orange, 0 262px 0 0 black, 0 303px 0 -1px orange, 0 303px 0 0 black, 0 363px 0 -1px orange, 0 363px 0 0 black, 0 297px 0 -1px orange, 0 297px 0 0 black, 0 369px 0 -1px orange, 0 369px 0 0 black;
+	}
+	.sector-12 .maquinas .inf .maquina .separador{
+		transform: none;
+		top: -16px;
+		left: -3px;
+		box-shadow: 0 -5px 0 -1px orange, 0 -5px 0 0 black;
+	}
+
+
+/* SECTOR 13 */
+
+	.sector-13 .maquinas .inf{
+		width: fit-content;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		padding-bottom: 1px;
+	}	
+	.sector-13 .maquinas .inf .maquina{
+		margin: 0 19px;
+	}
+	.sector-13 .maquinas .inf .separador{
+		transform: rotate(-90deg);
+		top: 23px;
+		left: -13px;
+		box-shadow: 0 58px 0 -1px orange, 0 58px 0 0 black, 7px 83px 0 -1px orange, 7px 83px 0 0 black, 7px 142px 0 -1px orange, 7px 142px 0 0 black;
+	}
+	.sector-13 .maquinas .inf .maquina .separador{
+		transform: none;
+		top: -17px;
+		left: -3px;
+		box-shadow: none;
+	}
+	#maquina-129{
+		top: 7px;
+
+	}
+
+
+/* SECTOR 14 */
+	.sector-14{
+		padding: 0;
+	}
+	.sector-14 .sup .separador{
+		transform: rotate(-90deg);
+		height: 6px;
+		top: 10px;
+		left: 0;
+		box-shadow: 0 70px 0 -1px orange, 0 70px 0 0 black, 0 120px 0 -1px orange, 0 120px 0 0 black, 0 190px 0 -1px orange, 0 190px 0 0 black, -12px 240px 0 -1px orange, -12px 240px 0 0 black, -12px 310px 0 -1px orange, -12px 310px 0 0 black, -12px 360px 0 2px orange, -12px 360px 0 3px black, -12px 430px 0 2px orange, -12px 430px 0 3px black;
+	}
+	.sector-14 .sup .maquina .separador{
+		transform: none;
+		height: 6px;
+		top: 58px;
+		box-shadow: 118px 0 0 -1px orange, 118px 0 0 0 black, 356px 0 0 -1px orange, 356px 0 0 0 black;
+	}
+
+	#maquina-146, #maquina-147{
+		top: -10px;
+	}
+	#maquina-59{
+		top: -5px;
+	}
+	.sector-14 .maquina-vanguard .tablero{
+		transform: rotate(-30deg);
+		top: 6px;
+		right: -9px;
+	}
+	.sector-14 .inf .separador-vanguard, .sector-15 .separador-vanguard{
+		width: 110px;
+		top: -12px;
+		left: 10px;
+		box-shadow: 115px 0 0 -1px orange, 115px 0 0 0 black, 235px 0 0 -1px orange, 235px 0 0 0 black, 355px 0 0 -1px orange, 355px 0 0 0 black;
+	}
+
+
+/* SECTOR 15 */
+
+	.sector-15 .maquina-vanguard .tablero{
+		transform: rotate(30deg);
+		top: 40px;
+		right: -9px;
+	}
+	.sector-15 .maquina{
+		top: -5px;
+	}
+	.sector-15 .separador-vanguard{
+		top: 56px;
+	}
+
+
+/*---------------INFORMACION DE MAQUINA----------------*/
+
+.info-container{
+	position: absolute;
+	width: 530px;
+	height: 180px;
+	background: linear-gradient(-90deg,#ffe9bf, #fff);
+	margin: 10px;
+	right: 0;
+	bottom: 0;
+	border: 1px solid black;
+	border-radius: 10px;
+	box-shadow: 0 0 9px black;
+	padding: 10px;
+}
+.info-container h2{
+	margin: 0 0 10px 0;
+	text-align: center;
+}
+
+.info-container div{
+	height: 80%;
+/*	background: yellow;*/
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.info-container div p{
+	margin: 0;
+	padding: 3px;
+}
+.hidden{
+	display: none;
+}
+
+/*------------------- ANIMACIONES ---------------------*/
+
+
+.motor{
+	transition: all .2s;
+	user-select: none;
+}
+.motor:hover{
+	cursor: pointer;
+	filter: brightness(1.3);
+	font-size: 1.3em;
+	box-shadow: 0 0 10px 0 black;
+}
+.motor:active{
+	filter: brightness(1);
+	text-shadow: 0 0 5px black;
+	color: white;
+}
+.aparecer{
+	animation: aparecer .5s forwards;
+}
+@keyframes aparecer{
+	0% {
+		filter: opacity(0%);
+	}
+	100% {
+		filter: opacity(100%);
+	}
+	
+}
