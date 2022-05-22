@@ -878,6 +878,12 @@ body{
 	font-size: 1.3em;
 	box-shadow: 0 0 10px 0 black;
 }
+.active{
+	transform: scale(1.3);
+	filter: brightness(1.6);
+	font-size: 1.3em;
+	box-shadow: 0 0 10px 0 black;
+}
 .motor:active{
 	filter: brightness(1);
 	text-shadow: 0 0 5px black;
